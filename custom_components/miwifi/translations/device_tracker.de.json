@@ -1,0 +1,19 @@
+{
+  "state": {
+    "miwifi__device_tracker": {
+      "home": "Verbunden",
+      "not_home": "Getrennt"
+    }
+  },
+  "state_attributes": {
+    "miwifi__device_tracker": {
+      "total_usage": "Gesamtverbrauch",
+      "signal_quality": "Signalqualität",
+      "very_strong": "Sehr Stark",
+      "strong": "Stark",
+      "fair":  "Ausreichend",
+      "weak": "Schwach",
+      "no_signal": "Kein Signal"
+    }
+  }
+}

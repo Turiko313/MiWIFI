@@ -1,0 +1,206 @@
+calc_passwd:
+  name: Calculate passwd
+  description: Calculate default passwd.
+  target:
+    device:
+      integration: miwifi
+
+request:
+  name: Send request
+  description: Send request to router.
+  target:
+    device:
+      integration: miwifi
+  fields:
+    uri:
+      name: Uri
+      description: Request uri.
+      required: true
+      example: "misystem/led"
+      selector:
+        text:
+    body:
+      name: Body
+      description: Request body.
+      required: false
+      example: |
+        on: 1
+      selector:
+        object:
+          
+block_device:
+  name: "Block Device"
+  description: "Enable or disable WAN access for a connected device (MiWiFi Router)."
+  fields:
+    device_id:
+      name: Device
+      description: "Select the device you want to block or unblock from internet access."
+      required: true
+      selector:
+        device:
+          integration: miwifi
+          entity:
+            domain: device_tracker
+    allow:
+      name: Allow Internet Access
+      description: "Select 'On' to allow WAN access, or 'Off' to block WAN access for the selected device."
+      required: true
+      selector:
+        boolean:
+
+
+dump_router_data:
+  name: Dump Router Data
+  description: Generate a JSON file with router information.
+  fields:
+    system:
+      name: Include system data
+      description: Include system information.
+      default: true
+      selector:
+        boolean: {}
+    network:
+      name: Include network data
+      description: Include WAN, Wi-Fi and topology details.
+      default: true
+      selector:
+        boolean: {}
+    devices:
+      name: Include connected devices
+      description: Include list of connected devices.
+      default: true
+      selector:
+        boolean: {}
+    nat_rules:
+      name: Include NAT rules
+      description: Include port forwarding rules.
+      default: true
+      selector:
+        boolean: {}
+    qos:
+      name: Include QoS configuration
+      description: Include QoS bandwidth settings.
+      default: true
+      selector:
+        boolean: {}
+    wifi_config:
+      name: Include Wi-Fi configuration
+      description: Include Wi-Fi network settings (may contain sensitive data).
+      default: false
+      selector:
+        boolean: {}
+    hide_sensitive:
+      name: Hide sensitive data
+      description: Hide passwords and MAC addresses.
+      default: true
+      selector:
+        boolean: {}
+
+
+test_guest_wifi:
+  name: Test Guest Wi-Fi
+  description: Quick status read of the guest network. If no router is selected, the main (is_main) router is used.
+  fields:
+    device_id:
+      name: Router (optional)
+      description: MiWiFi router to target
+      required: false
+      selector:
+        device:
+          integration: miwifi
+          multiple: false
+
+get_wifis:
+  name: Get Wi-Fi configuration (for the panel)
+  description: Returns Guest, 2.4G, 5G and 5G Game in response_data for prefill.
+  fields:
+    device_id:
+      name: Router (optional)
+      description: MiWiFi router to target
+      required: false
+      selector:
+        device:
+          integration: miwifi
+          multiple: false
+    hide_sensitive:
+      name: Hide passwords
+      description: Hide passwords in the returned data
+      default: true
+      selector:
+        boolean: {}
+
+set_guest_wifi:
+  name: Configure Guest Wi-Fi
+  description: Check = ON, unchecked = OFF. Optionally change SSID / password / encryption. No forced restart.
+  fields:
+    device_id:
+      name: Router (optional)
+      description: MiWiFi router to target
+      required: false
+      selector:
+        device:
+          integration: miwifi
+          multiple: false
+    enable:
+      name: Enable (ON) / Disable (OFF)
+      description: Explicit ON/OFF state for the guest network
+      required: true
+      selector:
+        boolean: {}
+    ssid:
+      name: SSID
+      description: New SSID (leave empty to keep current)
+      required: false
+      selector:
+        text: {}
+    password:
+      name: Password
+      description: New password (8–63 chars if psk2; leave empty to keep current)
+      required: false
+      selector:
+        text:
+          type: password
+    encryption:
+      name: Encryption
+      description: psk2 recommended; none = open network
+      required: false
+      selector:
+        select:
+          options:
+            - psk2
+            - none
+    hidden:
+      name: Hide SSID (0/1)
+      description: 0 = visible, 1 = hidden
+      required: false
+      selector:
+        number:
+          min: 0
+          max: 1
+          step: 1
+          mode: box
+
+set_wifis:
+  name: Configure Wi-Fi (2.4G / 5G / 5G Game)
+  description: Change multiple bands at once. If no router is selected, the main (is_main) router is used.
+  fields:
+    device_id:
+      name: Router (optional)
+      description: MiWiFi router to target
+      required: false
+      selector:
+        device:
+          integration: miwifi
+          multiple: false
+    wifi2g:
+      name: 2.4 G
+      description: Object with fields to change (e.g., {ssid, password, encryption, hidden})
+      selector: { object: {} }
+    wifi5g:
+      name: 5 G
+      description: Object with fields to change (e.g., {ssid, password, encryption, hidden})
+      selector: { object: {} }
+    wifi5g_game:
+      name: 5 G Game
+      description: Object with fields to change (e.g., {ssid, password, encryption, hidden})
+      selector: { object: {} }

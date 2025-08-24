@@ -1,0 +1,155 @@
+{
+  "title": "MiWifi",
+  "config": {
+    "error": {
+      "ip_address.not_matched": "Ungültige IP Adresse",
+      "password.not_matched": "Falsches Passwort oder Verschlüsselungsalgorithmus",
+      "connection": "Fehler bei der Herstellung einer Verbindung",
+      "router.not.supported": "Der Router wird nicht unterstützt. Detaillierte Informationen wurden an das Benachrichtigungszentrum gesendet.",
+      "router.error_with_reason": "Fehler bei der Verbindung zum Router: {reason}"
+    },
+    "step": {
+      "discovery_confirm": {
+        "title": "MiWiFi Einstellungen",
+        "description": "Gib die IP Adresse und das Passwort deines MiWifi Routers ein",
+        "data": {
+          "ip_address": "IP Adresse",
+          "password": "Passwort",
+          "encryption_algorithm": "Passwort Verschlüsselungsalgorithmus",
+          "is_track_devices": "Geräte verfolgen",
+          "stay_online": "Mindestaufenthalt in Sekunden online",
+          "scan_interval": "Scanintervall in Sekunden [PRO]",
+          "timeout": "Timeout von Anfragen in Sekunden [PRO]",
+          "wan_speed_unit": "WAN-Geschwindigkeitseinheit",
+          "is_force_load": "Erzwungenes Booten von Geräten im Repeater-Modus [PRO]",
+          "activity_days": "Erlaubte Tage seit der letzten Aktivität [PRO]",
+          "log_level": "Protokollebene (global)",
+          "enable_panel": "Steuerpanel aktivieren"
+        }
+      }
+    }
+  },
+  "options": {
+    "error": {
+      "ip_address.not_matched": "Ungültige IP Adresse",
+      "password.not_matched": "Falsches Passwort oder Verschlüsselungsalgorithmus",
+      "connection": "Fehler bei der Herstellung einer Verbindung",
+      "router.not.supported": "Der Router wird nicht unterstützt. Detaillierte Informationen wurden an das Benachrichtigungszentrum gesendet.",
+      "router.error_with_reason": "Fehler bei der Verbindung zum Router: {reason}"
+    },
+    "step": {
+      "init": {
+        "title": "MiWiFi Einstellungen",
+        "description": "Gib die IP Adresse und das Passwort deines MiWifi Routers ein",
+        "data": {
+          "ip_address": "IP Adresse",
+          "password": "Passwort",
+          "encryption_algorithm": "Passwort Verschlüsselungsalgorithmus",
+          "is_track_devices": "Geräte verfolgen",
+          "stay_online": "Mindestaufenthalt in Sekunden online",
+          "scan_interval": "Scanintervall in Sekunden [PRO]",
+          "timeout": "Timeout von Anfragen in Sekunden [PRO]",
+          "activity_days": "Anzahl der Tage, die nach der letzten Aktivität gewartet werden soll [PRO]",
+          "is_force_load": "Erzwungenes Booten von Geräten im Repeater-Modus [PRO]",
+          "wan_speed_unit": "WAN-Geschwindigkeitseinheit",
+          "log_level": "Protokollebene (global)",
+          "enable_panel": "Steuerpanel aktivieren"
+        }
+      }
+    }
+  },
+  "system_health": {
+    "info": {
+      "version": "Ausführung"
+    }
+  },
+  "panel_update": {
+    "title": "MiWiFi-Panel",
+    "update_title": "MiWiFi-Panel aktualisiert",
+    "update_message": "✅ Das MiWiFi-Panel wurde auf Version <b>{version}</b> aktualisiert.<br>Bitte <b>aktualisiere deinen Browser (Strg+F5)</b>, um die Änderungen zu sehen.",
+    "release_notes": "Dieses Panel ist Teil der benutzerdefinierten MiWiFi-Integration. Es bietet eine visuelle Übersicht über die Netzwerktopologie, Gerätesteuerung und Routerstatistiken. Das Update enthält Verbesserungen an der Benutzeroberfläche, Leistungsverbesserungen und Fehlerbehebungen."
+  },
+  "connection_type": {
+    "lan": "Kabel (LAN)",
+    "wifi_2_4": "Wi-Fi 2.4G",
+    "wifi_5_0": "Wi-Fi 5G",
+    "guest": "Gäste-Netzwerk",
+    "wifi_5_0_game": "Wi-Fi 5G (Gaming)",
+    "unknown": "Unbekannt"
+  },
+  "notifications": {
+    "new_device_title": "Neues Gerät auf MiWiFi erkannt",
+    "new_device_message": "📶 Neues Gerät verbunden: **{name}**\n💻 MAC: `{mac}`\n🌐 IP: `{ip}`\n📡 Verbindung: `{conn}`",
+    "unsupported_router_title": "Nicht unterstützter Router",
+    "unsupported_router_message": "⚠️ Router unter {ip} wird von der MiWiFi-Integration nicht unterstützt.",
+    "device_blocked_message": "Gerät {name} wurde automatisch {status}.",
+    "status_blocked": "BLOCKIERT",
+    "status_unblocked": "ENTBLOCKIERT",
+    "download_ready": "📦 Die Logs sind bereit: <a href='{url}' target='_blank'>Klicke hier, um sie herunterzuladen</a>",
+    "calc_passwd_message": "🔐 Dein Passwort ist: <b>{passwd}</b>",
+    "self_check_title": "Router-Kompatibilität fehlgeschlagen",
+    "self_check_message": "🔍 Inkompatible Methoden im Router ({model}) wurden erkannt.",
+    "suggest_unsupported_title": "Nicht unterstütztes Modell erkannt",
+    "suggest_unsupported_message": "🚫 Dieses Router-Modell hat einige Kompatibilitätstests nicht bestanden.",
+    "add_unsupported": "➕ {model} zu Feature {feature} in unsupported_user.py hinzugefügt",
+    "already_in_unsupported": "⚠️ {model} ist bereits in Feature {feature} vorhanden.",
+    "dump_ready": "📄 Dump generiert: <a href='{url}' target='_blank'>Herunterladen</a>",
+    "dump_error": "❌ Fehler beim Generieren des Dumps",
+    "title": "MiWiFi",
+    "status_on": "AN",
+    "status_off": "AUS",
+    "guest_status_message": "Guest Wi-Fi: {state}\nSSID: {ssid}\nEncryption: {encryption}\nSchnittstelle: {ifname}\nQuelle: {source}",
+    "guest_updated": "Guest Wi-Fi: {state}<br>SSID: {ssid}<br>Encryption: {encryption}",
+    "wifis_updated": "Wi-Fi aktualisiert: {bands}"
+  },
+
+  "services": {
+    "dump_router_data": {
+      "name": "Router-Dump erstellen",
+      "description": "Erstellt eine JSON-Datei mit Informationen des Hauptrouters.",
+      "fields": {
+        "system": { "name": "Systemdaten einschließen", "description": "Allgemeine Systeminformationen einschließen." },
+        "network": { "name": "Netzwerkdaten einschließen", "description": "WAN-, Wi-Fi- und Topologie-Details einschließen." },
+        "devices": { "name": "Verbundene Geräte einschließen", "description": "Liste der verbundenen Geräte und deren Informationen einschließen." },
+        "nat_rules": { "name": "NAT-Regeln einschließen", "description": "Portweiterleitungsregeln einschließen." },
+        "qos": { "name": "QoS-Konfiguration einschließen", "description": "Details zur QoS-Konfiguration einschließen." },
+        "wifi_config": { "name": "Wi-Fi-Konfiguration einschließen", "description": "Wi-Fi-Netzwerkeinstellungen einschließen (kann sensible Daten enthalten)." },
+        "hide_sensitive": { "name": "Sensible Daten ausblenden", "description": "Passwörter und MAC-Adressen ausblenden." }
+      }
+    },
+    "get_wifis": { "name": "Wi-Fi-Konfiguration abrufen" },
+    "set_guest_wifi": { "name": "Gäste-WLAN konfigurieren" },
+    "test_guest_wifi": { "name": "Gäste-WLAN testen" },
+    "set_wifis": { "name": "Wi-Fi konfigurieren (2.4G/5G/Game)" }
+  },
+
+  "service_fields": {
+    "common": {
+      "device_id": "MiWiFi-Router, auf den die Aktion angewendet werden soll"
+    },
+    "get_wifis": {
+      "hide_sensitive": "Passwörter im Ergebnis ausblenden (empfohlen)"
+    },
+    "set_guest_wifi": {
+      "enable": "Gäste-WLAN aktivieren oder deaktivieren",
+      "ssid": "Netzwerkname (SSID)",
+      "password": "Passwort (8–63 Zeichen, wenn psk2)",
+      "encryption": "Verschlüsselung (psk2 empfohlen; none = offen)",
+      "hidden": "SSID ausblenden (0 = sichtbar, 1 = verborgen)"
+    },
+    "set_wifis": {
+      "wifi2g": "Objekt mit zu ändernden Feldern (z. B. {ssid, password, encryption, hidden})",
+      "wifi5g": "Objekt mit zu ändernden Feldern (z. B. {ssid, password, encryption, hidden})",
+      "wifi5g_game": "Objekt mit zu ändernden Feldern (z. B. {ssid, password, encryption, hidden})"
+    }
+  },
+
+  "errors": {
+    "password_length_simple": "Passwort muss 8–63 Zeichen lang sein.",
+    "password_length_role": "[{role}] Passwort muss 8–63 Zeichen lang sein.",
+    "no_blocks": "Kein Wi-Fi-Block bereitgestellt (wifi2g / wifi5g / wifi5g_game).",
+    "apply_role_error": "Fehler beim Anwenden der Änderungen auf {role}.",
+    "router_error": "Router hat einen Fehler zurückgegeben.",
+    "password_length_error": "Das Passwort muss zwischen 8 und 63 Zeichen lang sein."
+  }
+}

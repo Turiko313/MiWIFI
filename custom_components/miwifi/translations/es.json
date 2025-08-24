@@ -1,0 +1,157 @@
+{
+  "title": "MiWifi",
+  "config": {
+    "error": {
+      "ip_address.not_matched": "IP no válida",
+      "password.not_matched": "Contraseña o algoritmo de cifrado incorrectos",
+      "connection": "No se pudo establecer la conexión",
+      "router.not.supported": "El router no es compatible. Se ha enviado información detallada al centro de notificaciones.",
+      "router.error_with_reason": "Error al conectar con el router: {reason}"
+    },
+    "step": {
+      "discovery_confirm": {
+        "title": "Configuración de MiWiFi",
+        "description": "Introduce la dirección IP y la contraseña de tu router MiWiFi",
+        "data": {
+          "ip_address": "Dirección IP",
+          "password": "Contraseña",
+          "encryption_algorithm": "Algoritmo de cifrado de la contraseña",
+          "is_track_devices": "Rastrear dispositivos",
+          "stay_online": "Permanencia mínima en línea en segundos",
+          "scan_interval": "Intervalo de escaneo en segundos [PRO]",
+          "timeout": "Tiempo de espera de solicitudes en segundos [PRO]",
+          "wan_speed_unit": "Unidad de velocidad WAN",
+          "is_force_load": "Cargar dispositivos forzosamente en modo repetidor [PRO]",
+          "activity_days": "Días permitidos desde la última actividad [PRO]",
+          "log_level": "Nivel de log (global)",
+          "enable_panel": "Habilitar panel de control"
+        }
+      }
+    }
+  },
+  "options": {
+    "error": {
+      "ip_address.not_matched": "IP no válida",
+      "password.not_matched": "Contraseña o algoritmo de cifrado incorrectos",
+      "connection": "No se pudo establecer la conexión",
+      "router.not.supported": "El router no es compatible. Se ha enviado información detallada al centro de notificaciones.",
+      "router.error_with_reason": "Error al conectar con el router: {reason}"
+    },
+    "step": {
+      "init": {
+        "title": "Configuración de MiWiFi",
+        "description": "Introduce la dirección IP y la contraseña de tu router MiWiFi",
+        "data": {
+          "ip_address": "Dirección IP",
+          "password": "Contraseña",
+          "encryption_algorithm": "Algoritmo de cifrado de la contraseña",
+          "is_track_devices": "Rastrear dispositivos",
+          "stay_online": "Permanencia mínima en línea en segundos",
+          "scan_interval": "Intervalo de escaneo en segundos [PRO]",
+          "wan_speed_unit": "Unidad de velocidad WAN",
+          "is_force_load": "Cargar dispositivos forzosamente en modo repetidor [PRO]",
+          "activity_days": "Días permitidos desde la última actividad [PRO]",
+          "timeout": "Tiempo de espera de solicitudes en segundos [PRO]",
+          "log_level": "Nivel de log (global)",
+          "enable_panel": "Habilitar panel de control"
+        }
+      }
+    }
+  },
+  "system_health": {
+    "info": {
+      "version": "Versión"
+    }
+  },
+  "panel_update": {
+    "title": "Panel MiWiFi",
+    "update_title": "Panel MiWiFi actualizado",
+    "update_message": "✅ El Panel MiWiFi se ha actualizado a la versión <b>{version}</b>.<br>Por favor, <b>actualiza tu navegador (Ctrl+F5)</b> para ver los cambios.",
+    "release_notes": "Este panel forma parte de la integración personalizada MiWiFi. Ofrece una vista visual de la topología de red, control de dispositivos y estadísticas del router. La actualización incluye mejoras de interfaz, rendimiento y correcciones de errores."
+  },
+  "connection_type": {
+    "lan": "Cable (LAN)",
+    "wifi_2_4": "Wi-Fi 2.4G",
+    "wifi_5_0": "Wi-Fi 5G",
+    "guest": "Red de Invitados",
+    "wifi_5_0_game": "Wi-Fi 5G (Gaming)",
+    "unknown": "Desconocido"
+  },
+  "notifications": {
+    "new_device_title": "Nuevo dispositivo detectado en MiWiFi",
+    "new_device_message": "📶 Nuevo dispositivo conectado: **{name}**\n💻 MAC: `{mac}`\n🌐 IP: `{ip}`\n📡 Conexión: `{conn}`",
+    "unsupported_router_title": "Router no compatible",
+    "unsupported_router_message": "⚠️ El router en {ip} no es compatible con la integración MiWiFi.",
+    "device_blocked_message": "El dispositivo {name} ha sido {status} automáticamente.",
+    "status_blocked": "BLOQUEADO",
+    "status_unblocked": "DESBLOQUEADO",
+    "download_ready": "📦 Los logs están listos: <a href='{url}' target='_blank'>Haz clic aquí para descargarlos</a>",
+    "calc_passwd_message": "🔐 Tu contraseña es: <b>{passwd}</b>",
+    "self_check_title": "Compatibilidad del router fallida",
+    "self_check_message": "🔍 Se han detectado métodos incompatibles en el router ({model}).",
+    "suggest_unsupported_title": "Modelo no compatible detectado",
+    "suggest_unsupported_message": "🚫 Este router falló algunas pruebas de compatibilidad.",
+    "add_unsupported": "➕ {model} añadido a la característica {feature} en unsupported_user.py",
+    "already_in_unsupported": "⚠️ {model} ya está presente en la característica {feature}.",
+    "dump_ready": "📄 Volcado generado: <a href='{url}' target='_blank'>Descargar</a>",
+    "dump_error": "❌ Error al generar el volcado",
+    "title": "MiWiFi",
+    "status_on": "ON",
+    "status_off": "OFF",
+    "guest_status_message": "Wi-Fi de Invitados: {state}\nSSID: {ssid}\nCifrado: {encryption}\nInterfaz: {ifname}\nOrigen: {source}",
+    "guest_updated": "Wi-Fi de Invitados: {state}<br>SSID: {ssid}<br>Cifrado: {encryption}",
+    "wifis_updated": "Wi-Fi actualizada: {bands}"
+
+  },
+
+  "services": {
+    "dump_router_data": {
+      "name": "Generar dump del router",
+      "description": "Genera un archivo JSON con información del router principal.",
+      "fields": {
+        "system": { "name": "Incluir datos del sistema", "description": "Incluye información general del sistema." },
+        "network": { "name": "Incluir datos de red", "description": "Incluye detalles de WAN, Wi-Fi y topología." },
+        "devices": { "name": "Incluir dispositivos conectados", "description": "Incluye lista de dispositivos conectados y su información." },
+        "nat_rules": { "name": "Incluir reglas NAT", "description": "Incluye reglas de reenvío de puertos." },
+        "qos": { "name": "Incluir configuración QoS", "description": "Incluye la configuración de QoS." },
+        "wifi_config": { "name": "Incluir configuración Wi-Fi", "description": "Incluye configuración de redes Wi-Fi (puede contener datos sensibles)." },
+        "hide_sensitive": { "name": "Ocultar datos sensibles", "description": "Oculta contraseñas y direcciones MAC." }
+      }
+    },
+    "get_wifis": { "name": "Obtener configuración Wi-Fi (panel)" },
+    "set_guest_wifi": { "name": "Configurar Wi-Fi de Invitados" },
+    "test_guest_wifi": { "name": "Test Wi-Fi de Invitados" },
+    "set_wifis": { "name": "Configurar Wi-Fi (2.4G/5G/Game)" }
+  },
+
+  "service_fields": {
+    "common": {
+      "device_id": "Router MiWiFi al que aplicar la acción"
+      },
+      "get_wifis": {
+        "hide_sensitive": "Oculta contraseñas en el resultado (recomendado)"
+      },
+      "set_guest_wifi": {
+        "enable": "Activa o desactiva la red de invitados",
+        "ssid": "Nombre de la red (SSID)",
+        "password": "Contraseña (8–63 caracteres si psk2)",
+        "encryption": "Cifrado (psk2 recomendado; none = abierta)",
+        "hidden": "Ocultar SSID (0 = visible, 1 = oculto)"
+      },
+      "set_wifis": {
+        "wifi2g": "Objeto con campos a cambiar (p. ej. {ssid, password, encryption, hidden})",
+        "wifi5g": "Objeto con campos a cambiar (p. ej. {ssid, password, encryption, hidden})",
+        "wifi5g_game": "Objeto con campos a cambiar (p. ej. {ssid, password, encryption, hidden})"
+      }
+    },
+
+  "errors": {
+    "password_length_simple": "La contraseña debe tener entre 8 y 63 caracteres.",
+    "password_length_role": "[{role}] La contraseña debe tener entre 8 y 63 caracteres.",
+    "no_blocks": "No se indicó ningún bloque (wifi2g / wifi5g / wifi5g_game).",
+    "apply_role_error": "Error al aplicar los cambios en {role}.",
+    "router_error": "El router devolvió un error.",
+    "password_length_error": "La contraseña debe tener entre 8 y 63 caracteres."
+  }
+
+}
